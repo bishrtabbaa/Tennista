@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  tennista.webapi:
+    image: tennista.webapi
+    build:
+      context: ./src/web/Tennista.WebAPI
+      dockerfile: Dockerfile
+
+  tennista.webspa:
+    image: tennista.webspa
+    build:
+      context: ./src/web/Tennista.WebSPA
+      dockerfile: Dockerfile
+      depends_on:
+       - tennista.webapi

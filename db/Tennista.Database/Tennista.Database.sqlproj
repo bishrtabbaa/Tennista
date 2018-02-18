@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Tennista</Name>
+    <Name>Tennista.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{f966a2c2-677d-42c5-beef-308469a14b58}</ProjectGuid>
+    <ProjectGuid>{d58bebc4-4fce-4c23-90b2-3300ca4f72d5}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Tennista</RootNamespace>
-    <AssemblyName>Tennista</AssemblyName>
+    <RootNamespace>Tennista.Database</RootNamespace>
+    <AssemblyName>Tennista.Database</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -57,5 +57,25 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="tennista" />
+    <Folder Include="import" />
+    <Folder Include="scripts" />
+    <Folder Include="import\Tables" />
+    <Folder Include="tennista\Tables" />
+    <Folder Include="tennista\StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="tennista\tennista.sql" />
+    <Build Include="import\import.sql" />
+    <Build Include="import\Tables\atp_match.sql" />
+    <Build Include="import\Tables\atp_player.sql" />
+    <Build Include="tennista\Tables\location.sql" />
+    <Build Include="tennista\Tables\match.sql" />
+    <Build Include="tennista\Tables\player.sql" />
+    <Build Include="tennista\Tables\tournament.sql" />
+    <Build Include="tennista\StoredProcedures\ImportPlayers.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tennista.Database.publish.xml" />
   </ItemGroup>
 </Project>

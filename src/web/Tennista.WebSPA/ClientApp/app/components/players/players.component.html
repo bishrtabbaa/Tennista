@@ -1,0 +1,22 @@
+﻿<table class='table' *ngIf="players">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Grand Slams Won</th>
+            <th>Date Of Birth</th>
+            <th>Place of Birth</th>
+            <th>Preferred Hand Type</th>
+            <th>Backhand Style Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let player of players">
+            <td>{{ player.name }}</td>
+            <td>{{ player.grandSlamsWon}}</td>
+            <td>{{ player.dateOfBirth }}</td>
+            <td>{{ player.placeOfBirth }}</td>
+            <td>{{ player.preferredHandType }}</td>
+            <td>{{ player.backhandStyleType }}</td>
+        </tr>
+    </tbody>
+</table>
